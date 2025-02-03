@@ -8,6 +8,8 @@ import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,30
 
 body{
   font-family:  "Google Sans", Arial, sans-serif;
+  display: flex;
+  margin: 0;
 }
 
 header {
@@ -106,7 +108,8 @@ header {
 }
 
 .material-symbols-outlined {
-  color: #5f6368; 
+  color: #5f6368;
+  cursor: pointer;
 }
 
 .right-section {
@@ -185,39 +188,105 @@ header {
   margin: 0;
 }
 
+/* Sidebar */
+#side-nav {
+  width: 80px; /* Collapsed width */
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  transition: width 0.2s ease;
+  padding-top: 8px;
+  white-space: nowrap;
+  border-top: 1px solid #dadce0;
+  position: fixed;
+  left: 0;
+}
+
+/* Expand sidebar on hover */
+#side-nav:hover {
+  width: 200px; /* Expanded width */
+}
+
+/* Sidebar Items */
+#side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 #side-nav li {
   display: flex;
   align-items: center;
   padding: 10px;
-  gap: 20px; /* Ensures space between icon and text */
-  width: 266px;
-  height: 36px;
-  margin-left: 12px;
+  gap: 20px;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 20px;
 }
 
 /* Icon Styles */
-
-
-/* Icon active state */
-
-
-/* Caption Styles */
-#side-nav:not(.expanded) li span + span {
-  display: none; /* Hide text when collapsed */
-}
-
-#side-nav.expanded li span + span {
-  display: inline-block; /* Show text when expanded */
-}
-
-
-#main-container {
+#side-nav ul li .material-symbols-outlined {
   display: flex;
-  height: calc(100vh - 64px); /* Adjust based on header height */
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background 0.3s ease;
 }
 
-#main{
-  width: 1448px;
+/* Hide circular background when hovered */
+#side-nav:hover .material-symbols-outlined {
+  background: transparent !important;
+}
+
+/* Icon active state (only for first item) */
+#side-nav ul li:first-child .material-symbols-outlined {
+  background: rgba(255, 193, 7, 0.2);
+  color: black;
+}
+
+/* Hide text when collapsed */
+#side-nav:not(:hover):not(.expanded) li span + span {
+  display: none; /* Hide text when not expanded and not hovering */
+}
+
+#side-nav:hover li span + span,
+#side-nav.expanded li span + span {
+  display: inline-block; /* Show text when either hovering or expanded */
+}
+
+
+/* Hover effect for other icons */
+#side-nav ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+
+
+#main {
+  margin-left: 80px; /* Matches collapsed sidebar width */
+  flex-grow: 1; /* Ensures it takes up the remaining space */
+  transition: margin-left 0.2s ease;
+}
+
+#main {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease-in-out;
+  padding: 20px;
+}
+
+/* Adjust main container's margin to accommodate expanded sidebar */
+#side-nav.expanded {
+  width: 280px;
+}
+
+#side-nav.expanded + #main {
+  margin-left: 280px; /* Push content when expanded */
 }
 
 
