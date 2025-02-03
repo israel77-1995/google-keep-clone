@@ -4,7 +4,10 @@ import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,30
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+}
+
+body{
+  font-family:  "Google Sans", Arial, sans-serif;
 }
 
 header {
@@ -109,22 +112,38 @@ header {
 .right-section {
   display: flex;
   justify-content: space-between;
-  gap: 45px;
-  margin-right: 52px;
+  gap: 15px;
+  margin-right: 25px;
 }
+
+.material-symbols-outlined.right {
+    display: inline-flex;  /* Align icon in center */
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;  /* Makes it a circle */
+    transition: background 0.3s ease;  /* Smooth hover effect */
+    cursor: pointer;
+}
+
+.material-symbols-outlined.right:hover {
+    background: rgba(0, 0, 0, 0.1); /* Light gray background on hover */
+    color: black;
+}
+
 
 .icons-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
 }
 
 .profile-section {
   display: flex;
   justify-content: space-betweeen;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 48px;
   align-items: center;
   gap: 14px;
 }
@@ -136,7 +155,61 @@ header {
 
 #side-nav ul{
   list-style: none;
+  padding: 0px;
 }
+
+/* Sidebar */
+#side-nav {
+  width: 80px; /* Collapsed width */
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  transition: width 0.1s ease;
+  padding-top: 8px;
+  white-space: nowrap;
+  border-top: 1px solid #dadce0;
+  border-right: none;
+}
+
+
+/* When expanded */
+#side-nav.expanded {
+  width: 200px;
+}
+
+/* Sidebar Items */
+#side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#side-nav li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 20px; /* Ensures space between icon and text */
+  width: 266px;
+  height: 36px;
+  margin-left: 12px;
+}
+
+/* Icon Styles */
+
+
+/* Icon active state */
+
+
+/* Caption Styles */
+#side-nav:not(.expanded) li span + span {
+  display: none; /* Hide text when collapsed */
+}
+
+#side-nav.expanded li span + span {
+  display: inline-block; /* Show text when expanded */
+}
+
 
 #main-container {
   display: flex;
