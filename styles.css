@@ -388,7 +388,7 @@ header {
 .note-card.expanded .note-icons {
   display: none;
 }
-.collapse-btn {
+.close-btn {
   margin-right: 15px;
   padding: 8px 24px;
   border: none;

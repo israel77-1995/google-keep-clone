@@ -1,6 +1,7 @@
 // Get the toggle button and sidebar
 const menuToggle = document.getElementById('menu-toggle');
 const sideNav = document.getElementById('side-nav');
+const closeButton = document.querySelector(".close-btn");
 
 // Toggle the expanded class on sidebar when the button is clicked
 menuToggle.addEventListener('click', () => {
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
           noteCard.classList.add("collapsed");
       }
   });
+
+  // Collapse when clicking the "Close" button
+  closeButton.addEventListener("click", function () {
+    noteCard.classList.remove("expanded");
+    noteCard.classList.add("collapsed");
+});
+
+
 });
 
 
