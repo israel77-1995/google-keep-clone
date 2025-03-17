@@ -381,6 +381,9 @@ header {
                  0px 4px 8px rgba(0, 0, 0, 0.18);
 }
 
+#add-note {
+  width: 100%;
+}
 .note-card.expanded #title,
 .note-card.expanded #actions {
     display: flex;
@@ -395,4 +398,22 @@ header {
   background-color: white;
   font-size: 14px;
   font-weight: 500;
+}
+
+.saved-note {
+  width: 400px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+.saved-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.saved-text {
+  color: #333;
 }

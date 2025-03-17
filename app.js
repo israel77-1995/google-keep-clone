@@ -2,10 +2,15 @@
 const menuToggle = document.getElementById('menu-toggle');
 const sideNav = document.getElementById('side-nav');
 const closeButton = document.querySelector(".close-btn");
+const noteCard = document.querySelector(".note-card");
+const titleInput = document.querySelector("#title div");
+const noteInput = document.querySelector("#add-note");
+const notesContainer = document.querySelector("#notes-container");
 
 // Toggle the expanded class on sidebar when the button is clicked
 menuToggle.addEventListener('click', () => {
   sideNav.classList.toggle('expanded');
+  
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -34,6 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
     noteCard.classList.remove("expanded");
     noteCard.classList.add("collapsed");
 });
+
+
+
+
 
 
 });
