@@ -42,10 +42,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const noteCard = document.querySelector(".note-card");
+    const titleInput = noteCard.querySelector("#title div");
+    const noteInput = noteCard.querySelector("#add-note");
+    const closeButton = noteCard.querySelector(".close-btn");
+    const notesContainer = document.getElementById("notes-container");
+
+    function addNote() {
+        const title = titleInput.innerText.trim();
+        const content = noteInput.innerText.trim();
+
+        // Only add note if content exists
+        if (title || content) {
+            const noteElement = document.createElement("div");
+            noteElement.classList.add("note");
+            noteElement.innerHTML = `
+                <h3>${title || "Untitled"}</h3>
+                <p>${content}</p>
+                <button class="archive-btn">Archive</button>
+            `;
+
+            // Append to the notes container
+            notesContainer.appendChild(noteElement);
+
+            // always have this placeholder text after editing
+            titleInput.innerText = "Title";
+            noteInput.innerText = "Take a note";
+        }
+    }
+
+    // Close button click event
+    closeButton.addEventListener("click", addNote);
+
+    // Detect click outside the note card
+    document.addEventListener("click", (event) => {
+        if (!noteCard.contains(event.target) && event.target !== closeButton) {
+            addNote();
+        }
+    });
+
+ 
+});
+
+
+
 
 
 
