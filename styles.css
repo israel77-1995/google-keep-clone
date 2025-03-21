@@ -435,37 +435,8 @@ header {
   gap: 10px; /* Space between notes */
 }
 
-.note {
-  width: 250px;
-  padding: 10px;
-  background: #fff8e1;
-  border: 1px solid #ffeb3b;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
 
-.note h3 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
 
-.note p {
-  font-size: 14px;
-  color: #555;
-}
 
-.archive-btn {
-  background: #f44336;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-top: 10px;
-  border-radius: 3px;
-}
 
-.archive-btn:hover {
-  background: #d32f2f;
-}
 
